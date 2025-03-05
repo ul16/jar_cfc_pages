@@ -133,6 +133,13 @@
                     </p>
                 </section>
             </div>
+            <div class="space-y-6 mt-6">
+                <section class="py-6 md:py-2 pt-0">
+                    <h2 class="text-2xl font-semibold">Ray ID</h2>
+                    <p id="cf-ray-id-element" class="text-lg">
+                    </p>
+                </section>
+            </div>
         </div>
     </section>
     <button
@@ -239,7 +246,9 @@
         req.send(null);
         req.onload = function () {
             var headers = req.getAllResponseHeaders().toLowerCase();
-            alert(headers)
+            var h = headers.split(`\n`).filter(x => x.includes("cf-ray"))
+            h = h.length == 0 ? "Unknown" : h[0].replace("cf-ray:","")
+            document.getElementById("cf-ray-id-element").innerHTML = h.toString()
         };
     </script>
 </body>
