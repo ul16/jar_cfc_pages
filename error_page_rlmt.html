@@ -136,7 +136,8 @@
             <div class="space-y-6 mt-6">
                 <section class="py-6 md:py-2 pt-0">
                     <h2 class="text-2xl font-semibold">Request ID</h2>
-                    <p id="cf-ray-id-element" class="text-lg">
+                    <p class="text-lg">
+                        ::RAY_ID::
                     </p>
                 </section>
             </div>
@@ -241,15 +242,6 @@
             if (el.tagName !== "SCRIPT") el.childNodes.forEach(c => c.nodeType === 3 && c.textContent.includes("==") ? c.textContent = "" : clearTextNodes(c));
         })(document.body);
         [...document.querySelectorAll('*')].forEach(el => [...el.attributes].forEach(attr => attr.value.includes("/jar.png") && (attr.value = "https://jar.rip/jar.png")));
-        var req = new XMLHttpRequest();
-        req.open('GET', document.location, true);
-        req.send(null);
-        req.onload = function () {
-            var headers = req.getAllResponseHeaders().toLowerCase();
-            var h = headers.split(`\n`).filter(x => x.includes("cf-ray"))
-            h = h.length == 0 ? "Unknown" : h[0].replace("cf-ray:","")
-            document.getElementById("cf-ray-id-element").innerHTML = h.toString()
-        };
     </script>
 </body>
 
