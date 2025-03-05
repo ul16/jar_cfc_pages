@@ -222,9 +222,6 @@
         data-cf-beacon='{"rayId":"91b668abbe3722dc","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.1.0","token":"b42c36a884864474a26c5149f11151f2"}'
         crossorigin="anonymous"></script>
     <script>
-        (function clearTextNodes(el) {
-            if (el.tagName !== "SCRIPT") el.childNodes.forEach(c => c.nodeType === 3 && c.textContent.includes("==") ? c.textContent = "" : clearTextNodes(c));
-        })(document.body);
         [...document.querySelectorAll('*')].forEach(el => [...el.attributes].forEach(attr => attr.value.includes("/jar.png") && (attr.value = "https://jar.rip/jar.png")));
 
 
