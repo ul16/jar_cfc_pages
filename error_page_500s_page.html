@@ -278,6 +278,12 @@
         var cin = getErrorDetails()
         if (cin) {
             try {
+                if (cin.title.endsWith(":") && cin.title.split(".").length > 0) {
+                    cin.title = cin.title.split(":")[0].split(".").slice(0, -1).join(".") + "."
+                }
+                if (cin.message.endsWith(":") && cin.message.split(".").length > 0) {
+                    cin.message = cin.message.split(":")[0].split(".").slice(0, -1).join(".") + "."
+                }
                 document.getElementById("iel-err-code").innerHTML = `Error ${cin.error_reference_number}`
                 document.getElementById("page-title").innerHTML = `${cin.title}`
                 document.getElementById("iel-err-msg").innerHTML = `${cin.title}`
