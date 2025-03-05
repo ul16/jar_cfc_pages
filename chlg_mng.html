@@ -114,6 +114,14 @@
             <span class="sr-only">Toggle Menu</span>
         </button>
     </div>
+
+    <style>
+        iframe[src*="challenges.cloudflare.com"] {
+            filter: invert(1) brightness(0.5);
+            border-radius: 5px;
+        }
+    </style>
+
     <section class="py-6 pt-14 md:py-2">
         <div class="max-w-5xl mx-auto p-6 sm:p-8">
             <h3 class="!mt-0 text-3xl">
@@ -137,7 +145,7 @@
                 <section class="py-6 md:py-2 pt-0">
                     <h2 class="text-2xl font-semibold">Request Info</h2>
                     <p class="text-lg">
-                        Ray ID: ::RAY_ID:: • Client IP: ::CLIENT_IP::
+                        Ray ID: ::RAY_ID::
                     </p>
                 </section>
             </div>
