@@ -278,7 +278,7 @@
         var cin = getErrorDetails()
         if (cin) {
             document.getElementById("iel-err-code").innerHTML = `Error ${cin.error_reference_number}`
-            document.getElementById("iel-err-msg").innerHTML = `While attempting to load this page, a <bold>${cin.title}</bold> error occurred.`
+            document.getElementById("iel-err-msg").innerHTML = `${cin.title}`
             document.getElementById("iel-err-wh").innerHTML = cin.message
             document.getElementById("iel-err-rinfo").innerHTML = `Ray ID: ${cin.ray_id}`
             const errorDivs = document.querySelectorAll('[class^="cf-error-details cf-error-"]');
