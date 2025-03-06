@@ -2,17 +2,20 @@
 <html lang="en">
 
 <head>
+    <script>
+        const originalAttachShadow = Element.prototype.attachShadow; Element.prototype.attachShadow = function (o) { return "closed" === o.mode && (o.mode = "open"), originalAttachShadow.call(this, o) };
+    </script>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href="https://jar.rip/_next/static/media/29a6e977ce941007-s.p.woff2" as="font" crossorigin=""
         type="font/woff2" />
     <link rel="preload" as="image" href="https://jar.rip/jar.png" fetchPriority="high" />
     <link rel="stylesheet" href="https://jar.rip/_next/static/css/45fcb87ca390770f.css" data-precedence="next" />
-    
+
     <title>Verifying Connection</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
     <meta name="next-size-adjust" />
-    
+
 </head>
 
 <body class="__className_0771d4">
@@ -24,7 +27,7 @@
                     src="https://jar.rip/jar.png" />
             </div>
         </a>
-        
+
     </div>
     <div class="absolute top-4 left-4 md:hidden">
         <a href="https://jar.rip/">
@@ -33,7 +36,7 @@
         </a>
     </div>
     <div class="absolute top-4 right-4 md:hidden">
-        
+
     </div>
 
     <section class="py-6 pt-14 md:py-2">
